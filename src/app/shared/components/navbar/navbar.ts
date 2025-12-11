@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
+import { FlowbiteService } from '../../../core/services/flowbite.service';
+import { initFlowbite } from 'flowbite';
 
 @Component({
   selector: 'app-navbar',
@@ -7,5 +9,12 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.scss',
 })
 export class Navbar {
+  constructor(private flowbiteService: FlowbiteService) {}
+
+  ngOnInit(): void {
+    this.flowbiteService.loadFlowbite((flowbite) => {
+      initFlowbite();
+    });
+  }
 
 }
