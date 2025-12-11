@@ -4,7 +4,7 @@
   <span class="font-semibold">TEES25</span> at checkout
 </div>
 <!-- Navbar -->
-<nav class="border-b border-black relative bg-white">
+<nav class="fixed start-0 end-0 border-b border-black bg-white">
   <div class="flex justify-between items-center">
     <!-- Left (Logo) -->
     <div
@@ -46,24 +46,29 @@
         <!-- Links -->
         <a
           href="#"
-          class="px-16 py-6 transition duration-300 hover:bg-black hover:text-lime-400 border-r border-black"
-          >New</a
+          class="lg:px-12 xl:px-16 py-6 transition duration-300 hover:bg-black hover:text-lime-400 border-r border-black"
+          >Home</a
         >
         <a
           href="#"
-          class="px-16 py-6 transition duration-300 hover:bg-black hover:text-lime-400 border-r border-black"
-          >Women</a
+          class="lg:px-12 xl:px-16 py-6 transition duration-300 hover:bg-black hover:text-lime-400 border-r border-black"
+          >Products</a
         >
         <a
           href="#"
-          class="px-16 py-6 transition duration-300 hover:bg-black hover:text-lime-400 border-r border-black"
-          >Men</a
+          class="lg:px-12 xl:px-16 py-6 transition duration-300 hover:bg-black hover:text-lime-400 border-r border-black"
+          >Categories</a
+        >
+        <a
+          href="#"
+          class="lg:px-12 xl:px-16 py-6 transition duration-300 hover:bg-black hover:text-lime-400 border-r border-black"
+          >brands</a
         >
       </div>
 
       <!-- Login -->
       <div
-        class="flex items-center justify-center space-x-2 py-4 md:py-0 px-8 cursor-pointer hover:text-lime-500 transition"
+        class="flex items-center justify-center space-x-2 py-4 md:py-0 lg:px-4 xl:px-8 cursor-pointer hover:text-lime-500 transition"
       >
         <div class="w-6 h-6 bg-black rounded-full flex items-center justify-center">
           <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" class="w-4 h-4">
@@ -76,7 +81,21 @@
       </div>
 
       <!-- Cart -->
-      <div class="relative cursor-pointer px-8 py-4 md:py-0 flex justify-center">
+      <div
+        class="relative cursor-pointer lg:ps-4 lg:pe-6 xl:px-8 py-4 md:py-0 flex justify-center gap-4"
+      >
+        <div class="relative">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" class="w-6 h-6">
+            <path
+              d="M7 4h-2l-3 9v2h2l3-9h10l3 9h2v-2l-3-9h-12zm2 16c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2zm8 0c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2z"
+            />
+          </svg>
+          <span
+            class="absolute -top-2 -right-2 bg-lime-400 text-black text-xs font-bold rounded-full w-4 h-4 flex items-center justify-center"
+            >0</span
+          >
+        </div>
+        <!-- Wishlist -->
         <div class="relative">
           <svg xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" class="w-6 h-6">
             <path
