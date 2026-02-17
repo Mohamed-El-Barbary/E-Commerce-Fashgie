@@ -1,1 +1,173 @@
-<p>navbar works!</p>
+<!-- Top Sale Banner -->
+<div class="bg-black text-white text-center py-2 text-sm">
+  Sale is on! 25% off sitewide using
+  <span class="font-semibold">TEES25</span> at checkout
+</div>
+<!-- Navbar -->
+<nav class="fixed start-0 end-0 border-b border-black bg-white">
+  <div class="flex justify-between items-center">
+    <!-- Left (Logo) -->
+    <div
+      class="bg-lime-400 text-black font-bold text-xl px-16 py-6 border-r border-black flex-shrink-0"
+    >
+      T SHOP
+    </div>
+
+    <button
+      data-collapse-toggle="navbar-default"
+      type="button"
+      class="lg:hidden px-6 py-6 text-black focus:outline-none"
+      aria-controls="navbar-default"
+      aria-expanded="false"
+    >
+      <span class="sr-only">Open main menu</span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-7 h-7"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M3.75 5.75h16.5M3.75 12h16.5M3.75 18.25h16.5"
+        />
+      </svg>
+    </button>
+
+    <!-- Right Side (Links + Login + Cart) - Using Flowbite JS -->
+    <div
+      class="hidden absolute lg:static left-0 top-[101%] w-full lg:w-auto bg-white lg:bg-transparent border-t border-black md:border-0 z-50 lg:flex lg:flex-row items-center"
+      id="navbar-default"
+    >
+      @if (isLoggedIn == true) {
+      <div class="flex flex-col lg:flex-row w-full lg:w-auto text-center">
+        <!-- Links -->
+        <a
+          routerLink="/home"
+          routerLinkActive="text-lime-400 border-r bg-black"
+          class="lg:px-12 xl:px-16 py-6 transition duration-300 hover:text-lime-400 border-r border-black"
+          >Home</a
+        >
+        <a
+          routerLink="/products"
+          routerLinkActive="text-lime-400 border-r bg-black"
+          class="lg:px-12 xl:px-16 py-6 transition duration-300 hover:text-lime-400 border-r border-black"
+          >Products</a
+        >
+        <a
+          routerLink="/categories"
+          routerLinkActive="text-lime-400 border-r bg-black"
+          class="lg:px-12 xl:px-16 py-6 transition duration-300 hover:text-lime-400 border-r border-black"
+          >Categories</a
+        >
+        <a
+          routerLink="/brands"
+          routerLinkActive="text-lime-400 border-r bg-black"
+          class="lg:px-12 xl:px-16 py-6 transition duration-300 hover:text-lime-400 border-r border-black"
+          >brands</a
+        >
+      </div>
+      <!-- Logout -->
+      <div
+        class="flex items-center justify-center space-x-2 py-4 md:py-0 lg:px-4 xl:px-8 cursor-pointer hover:text-lime-500 transition"
+      >
+        <div class="w-6 h-6 bg-black rounded-full flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" class="w-4 h-4">
+            <path
+              d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"
+            />
+          </svg>
+        </div>
+        <span>Log out</span>
+      </div>
+      <!-- Cart -->
+      <div
+        class="relative cursor-pointer lg:ps-4 lg:pe-6 xl:px-8 py-4 md:py-0 flex justify-center gap-4"
+      >
+        <div class="relative">
+          <a routerLink="/cart" routerLinkActive="bg-lime-400" class="hover:bg-lime-400">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="black"
+              viewBox="0 0 24 24"
+              class="w-6 h-6"
+            >
+              <path
+                d="M7 4h-2l-3 9v2h2l3-9h10l3 9h2v-2l-3-9h-12zm2 16c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2zm8 0c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2z"
+              />
+            </svg>
+          </a>
+          <span
+            class="absolute -top-2 -right-2 bg-lime-400 text-black text-xs font-bold rounded-full w-4 h-4 flex items-center justify-center"
+            >0</span
+          >
+        </div>
+        <!-- Wishlist -->
+        <div class="relative">
+          <a routerLink="/wishlist" routerLinkActive="bg-lime-400" class="hover:bg-lime-400">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="black"
+              viewBox="0 0 24 24"
+              class="w-6 h-6"
+            >
+              <path
+                d="M7 4h-2l-3 9v2h2l3-9h10l3 9h2v-2l-3-9h-12zm2 16c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2zm8 0c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2z"
+              />
+            </svg>
+          </a>
+          <span
+            class="absolute -top-2 -right-2 bg-lime-400 text-black text-xs font-bold rounded-full w-4 h-4 flex items-center justify-center"
+            >0</span
+          >
+        </div>
+      </div>
+      } @if (isLoggedIn == false) {
+
+      <!-- Logout -->
+      <div
+        class="flex items-center justify-center space-x-2 py-4 md:py-0 lg:px-4 xl:px-8 cursor-pointer hover:text-lime-500 transition"
+      >
+        <div class="w-6 h-6 bg-black rounded-full flex items-center justify-center">
+          <a routerLink="/login" routerLinkActive="text-lime-400 border-r bg-black">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="white"
+              viewBox="0 0 24 24"
+              class="w-4 h-4"
+            >
+              <path
+                d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"
+              />
+            </svg>
+          </a>
+        </div>
+        <span>Log in</span>
+      </div>
+      <div
+        class="flex items-center justify-center space-x-2 py-4 md:py-0 lg:px-4 xl:px-8 cursor-pointer hover:text-lime-500 transition"
+      >
+        <div class="w-6 h-6 bg-black rounded-full flex items-center justify-center">
+          <a routerLink="/register" routerLinkActive="text-lime-400 border-r bg-black">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="white"
+              viewBox="0 0 24 24"
+              class="w-4 h-4"
+            >
+              <path
+                d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"
+              />
+            </svg>
+          </a>
+        </div>
+        <span>Register</span>
+      </div>
+
+      }
+    </div>
+  </div>
+</nav>
